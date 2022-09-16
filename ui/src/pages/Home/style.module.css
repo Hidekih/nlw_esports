@@ -1,0 +1,67 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/bg.svg');
+    background-color: #141318;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.header {
+    width: 100%;
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    display: block;
+    margin-top: 5rem;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+
+    color: #fff;
+}
+
+.gradient {
+    background: #fff;
+    background: linear-gradient(to right, #8b81f2, #5ee49f, #5ee49f, #d3d664);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.list {
+    width: calc(100% - 6rem);
+    margin: 4rem 3rem 0 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.banners {
+    width: 100%;
+    max-width: 75rem;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    max-width: 75rem;
+    margin: 2rem auto 0 auto;
+    overflow: hidden;
+
+    border-radius: 8px;
+    background: linear-gradient(to right, #8b81f2, #5ee49f, #5ee49f, #d3d664);
+}
+
+.footer div {
+    padding: 1.5rem 2rem;
+    width: 100%;
+    height: calc(100% - 4px);
+    margin-top: 4px;
+    max-width: 75rem;
+    border-radius: 4px 4px 0 0;
+    background-color: #2a2634;
+}
