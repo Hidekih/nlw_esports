@@ -1,40 +1,66 @@
 /** @jsxImportSource solid-js */
-import type { Component } from 'solid-js';
+import { Component, createEffect, createSignal } from 'solid-js';
+import axios from 'axios';
 
 import logo from '../../assets/logo.svg';
-import styles from './style.module.css';
+import styles from './styles.module.css';
+import Modal from '../../components/Modal';
 
 export const Home: Component = () => {
-  return (
-    <div class={styles.container}>
-      <header class={styles.header}>
-        <img src={logo} alt="Logotipo NLM e-sports" />
-      </header>
+    const [ gamesList, setGamesList ] = createSignal();
+    const [ isModalOpen, setIsModalOpen ] = createSignal(false);
 
-      <h1>
-        Seu <span class={styles.gradient}>duo</span> está aqui.
-      </h1>
+    createEffect(async() => {
+      const response = await axios.get('https://api.github.com/users/Hidekih')
+      console.log(response.data)
+    })
 
-      <div class={styles.list}>
-        <button> volta </button>
+	const handleToggleModal = () => {
+		setIsModalOpen(value => !value)
+	}
 
-        <div>
-          <a href=""></a>
-          <a href=""></a>
-          <a href=""></a>
-          <a href=""></a>
-          <a href=""></a>
-          <a href=""></a>
-        </div>
+	return (
+		<>
+			<div class={styles.container}>
+				<header class={styles.header}>
+					<img src={logo} alt="Logotipo NLW e-sports" />
+				</header>
 
-        <button> proximo </button>
-      </div>
+				<h1>
+					Seu <span class={styles.gradient}>duo</span> está aqui.
+				</h1>
 
-      <footer class={styles.footer}>
-        <div>
-          asdas
-        </div>
-      </footer>
-    </div>
-  );
+				<div class={styles.list}>
+					<button> volta </button>
+
+					<div>
+					<a href=""></a>
+					<a href=""></a>
+					<a href=""></a>
+					<a href=""></a>
+					<a href=""></a>
+					<a href=""></a>
+					</div>
+
+					<button> proximo </button>
+				</div>
+
+				<footer class={styles.footer}>
+					<div>
+					asdas
+					</div>
+				</footer>
+
+				<button onclick={handleToggleModal}>Abrir modal</button>
+			</div>
+
+			{ isModalOpen() && (
+				<>
+					<Modal 
+						toggleModal={handleToggleModal}
+					></Modal>
+				</>
+			) }
+		</>
+	);
 };
