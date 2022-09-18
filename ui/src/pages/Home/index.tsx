@@ -2,6 +2,7 @@
 import { Component, createEffect, createSignal } from 'solid-js';
 import axios from 'axios';
 
+import './styles.css';
 import logo from '../../assets/logo.svg';
 import styles from './styles.module.css';
 import Modal from '../../components/Modal';
@@ -23,7 +24,7 @@ export const Home: Component = () => {
 		<>
 			<div class={styles.container}>
 				<header class={styles.header}>
-					<img src={logo} alt="Logotipo NLW e-sports" />
+					<img class="logo" src={logo} alt="Logotipo NLW e-sports" />
 				</header>
 
 				<h1>
@@ -47,7 +48,7 @@ export const Home: Component = () => {
 
 				<footer class={styles.footer}>
 					<div>
-					asdas
+					TBD
 					</div>
 				</footer>
 
