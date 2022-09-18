@@ -2,7 +2,6 @@
 import { Component, createEffect, createSignal } from 'solid-js';
 import axios from 'axios';
 
-import './styles.css';
 import logo from '../../assets/logo.svg';
 import styles from './styles.module.css';
 import Modal from '../../components/Modal';
@@ -12,8 +11,9 @@ export const Home: Component = () => {
     const [ isModalOpen, setIsModalOpen ] = createSignal(false);
 
     createEffect(async() => {
-      const response = await axios.get('https://api.github.com/users/Hidekih')
-      console.log(response.data)
+	
+		const response = await axios.get('https://api.github.com/users/Hidekih')
+		console.log(response.data)
     })
 
 	const handleToggleModal = () => {
@@ -22,9 +22,9 @@ export const Home: Component = () => {
 
 	return (
 		<>
-			<div class={styles.container}>
+			<div>
 				<header class={styles.header}>
-					<img class="logo" src={logo} alt="Logotipo NLW e-sports" />
+					<img class="animate-floating" src={logo} alt="Logotipo NLW e-sports" />
 				</header>
 
 				<h1>

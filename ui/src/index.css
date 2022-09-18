@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .animate-floating {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translatey(0px);
+        }
+        50% {
+            transform: translatey(-14px);
+        }
+        100% {
+            transform: translatey(0px);
+        }
+    }
+}
+
+@layer components {
+    .card {
+        @apply relative rounded-lg overflow-hidden;
+    }
+    .card-info {
+        @apply absolute right-0 bottom-0 left-0 w-full rounded-[0px] h-[50%] flex flex-col items-start p-4 bg-nlw-card-gradient justify-end;
+    }
+    .card-title {
+        @apply text-base font-bold text-white;
+    }
+    .card-description {
+        @apply mt-1 text-sm rounded-[6px] text-[#D4D4D8];
+    }
+}
+

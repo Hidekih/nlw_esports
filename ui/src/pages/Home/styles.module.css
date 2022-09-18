@@ -50,8 +50,8 @@ h1 {
     width: 100%;
     max-width: 75rem;
     margin: 2rem auto 0 auto;
-    overflow: hidden;
-
+    /* overflow: hidden; */
+    box-sizing: border-box;
     border-radius: 8px;
     background: linear-gradient(to right, #8b81f2, #5ee49f, #5ee49f, #d3d664);
 }
@@ -62,6 +62,7 @@ h1 {
     height: calc(100% - 4px);
     margin-top: 4px;
     max-width: 75rem;
-    border-radius: 4px 4px 0 0;
+    box-sizing: border-box;
+    border-radius: 6px;
     background-color: #2a2634;
 }
